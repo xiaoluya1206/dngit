@@ -1,0 +1,36 @@
+.register-counter {
+    position: relative;
+    top: 44px;
+    bottom: 50px;
+}
+
+#register-but {
+    width: 50%;
+}
+
+#vCode {
+    color: #000;
+    font-size: 14px;
+}
+
+.reg {
+    color: #069;
+    font-size: 14px;
+    float: right;
+}
+
+.ma {
+    margin: 10px;
+}
+
+[type="text"][name="code"] {
+    width: 60%;
+    float: left;
+}
+
+.mui-input-row .btn_getCode {
+    width: 35%;
+    float: left;
+    margin-left: 5%;
+    height: 40px;
+}

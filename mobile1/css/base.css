@@ -1,0 +1,50 @@
+/* 公共样式文件 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.my-header {
+    background-color: #006699;
+}
+
+.my-header h1 {
+    color: #fff;
+}
+
+.my-header .mui-icon-search {
+    color: #fff;
+}
+
+
+/* 内容区域 */
+
+.mui-content {
+    margin-bottom: 50px;
+    background-color: #fff;
+}
+
+
+/* 底部栏 */
+
+.my-footer {
+    background-color: #006699;
+}
+
+.my-footer .mui-tab-item {
+    color: #fff;
+}
+
+.my-footer .mui-tab-item.mui-active {
+    color: darkorange;
+}

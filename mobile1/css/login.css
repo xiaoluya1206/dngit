@@ -1,0 +1,16 @@
+.login-counter {
+    position: relative;
+    top: 44px;
+    bottom: 50px;
+}
+
+.register-now {
+    color: #069;
+    font-size: 14px;
+    float: right;
+    margin: 10px;
+}
+
+#login-but {
+    width: 50%;
+}

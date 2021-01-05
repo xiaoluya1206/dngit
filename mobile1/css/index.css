@@ -1,0 +1,109 @@
+.nav-links {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 10px;
+}
+
+.nav-links a {
+    width: 33.333%;
+}
+
+.nav-links img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+
+/* 品牌专区 */
+
+.brand {
+    padding: 0 10px;
+}
+
+.brand .title,
+.product .title,
+.product ul li img,
+.brand ul li a img {
+    width: 100%;
+}
+
+.brand ul {
+    /* overflow: hidden; */
+    padding: 10px 0;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.brand ul li {
+    width: 25%;
+}
+
+
+/* .brand ul li a {
+    display: block;
+} */
+
+
+/* 运动生活 */
+
+.product {
+    padding: 0 10px;
+}
+
+.product ul {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.product ul li {
+    width: 50%;
+    text-align: center;
+    /* 设置左边距 */
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.product ul li a {
+    display: block;
+    box-shadow: 0 0 5px #ccc;
+    padding: 5px;
+}
+
+.product ul li .name {
+    display: block;
+    color: #8f8f94;
+    font-size: 14px;
+    height: 38px;
+    line-height: 19px;
+}
+
+.product ul li p {
+    padding-top: 5px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.product ul li p span:first-child {
+    color: #f20;
+    margin-right: 5px;
+}
+
+.product ul li .buy-now {
+    display: block;
+    width: 82px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    margin: 0 auto 5px auto;
+    background-color: #006699;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+
+/* 原价删除线 */
+
+.product ul li p span:last-child {
+    text-decoration: line-through;
+}
