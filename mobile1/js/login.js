@@ -9,8 +9,8 @@ $(function() {
         // 获取属性name的输入框的值
         let username = $.trim($('[name = username]').val())
         let password = $.trim($('[name = password]').val())
-            // console.log(username)
-            // console.log(password)
+        console.log(username)
+        console.log(password)
         if (!username) {
             mui.toast('请输入用户名');
             return;
