@@ -24,10 +24,12 @@ $(function() {
         $.ajax({
             type: "post",
             url: "/user/login",
+            async: false,
             data: {
                 username: username,
                 password: password
             },
+            // ajax请求回来之前出现正在加载的字样
             beforeSend: function() {
                 $("#login-but").html('正在登录...')
             },
@@ -35,15 +37,17 @@ $(function() {
                 console.log(result)
                 if (result.success) {
                     mui.toast('登录成功');
-                    $("#login-but").html('登录')
                     setTimeout(function() {
                         // 跳转页面
                         location.href = "user.html"
                     }, 2000)
                 } else {
                     mui.toast(result.message);
-                    console.log(result.message)
+                    // console.log(result.message);
                 }
+                setTimeout(function() {
+                    $("#login-but").html('登录')
+                }, 2000)
             }
         });
     })
