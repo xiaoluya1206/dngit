@@ -1,0 +1,61 @@
+.mui-content>.mui-table-view:first-child {
+    margin-top: 0px;
+}
+
+.mui-content {
+    background-color: #fff;
+    padding: 0 10px;
+}
+
+.mui-content .search {
+    margin: 10px 0;
+    overflow: hidden;
+    display: flex;
+    border-right: none;
+}
+
+.mui-content .search input[type='search'] {
+    margin: 0;
+    font-size: 14px;
+    border-radius: 6px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: #fff;
+    border: 1px solid #069;
+    text-align: left;
+}
+
+.mui-content .search .mui-btn {
+    border-radius: 0;
+    border: 0;
+    background-color: #069;
+    outline: none;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.mui-content .history-top {
+    font-size: 14px;
+    color: #666;
+    padding: 5px 0;
+    margin-bottom: 5px;
+}
+
+.mui-content .history-top .mui-pull-right {
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.mui-content a {
+    color: #000;
+}
+
+.mui-icon-closeempty {
+    position: absolute;
+    right: 0;
+}
+
+.relative {
+    position: relative;
+    padding: 10px 0;
+}

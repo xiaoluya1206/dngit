@@ -42,7 +42,8 @@
         </header>
         <!-- 内容区域 -->
         <div class="mui-content">
-            <a class="addRess" href="addAddress.html">添加收货地址</a>
+            <!-- 通过地址传参判断从哪里跳转 -->
+            <a class="addRess" href="addAddress.html?Edit=0">添加收货地址</a>
 
             <ul class="mui-table-view" id="address-box">
 
@@ -78,7 +79,7 @@
 
         <script type="text/template" id="address">
             <%for(let i = 0;i<result.length;i++){%>
-                <li class="mui-table-view-cell mui-media">
+                <li class="mui-table-view-cell mui-media edit-btn" data-id="<%=result[i].id%>">
                     <!-- 删除按钮和编辑按钮  id为后台每个数据的id-->
                     <div class="mui-slider-right mui-disabled">
                         <a href="javascript:;" class="mui-btn mui-btn-blue edit-btn" data-id='<%=result[i].id%>'>编辑</a>

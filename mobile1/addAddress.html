@@ -21,29 +21,14 @@
 
     <!-- 头部 -->
     <header id="header" class="mui-bar mui-bar-nav my-header">
-        <h1 class="mui-title">添加收货地址</h1>
+        <h1 class="mui-title">收货地址</h1>
         <!-- 返回图标 -->
         <a class="mui-icon mui-icon-left-nav mui-pull-left" href="javascript:history.back();"></a>
     </header>
     <!-- 内容区域 -->
     <div class="mui-content">
-        <form class="mui-input-group" id="from">
-            <div class="mui-input-row">
-                <input type="text" name="username" class="mui-input-clear" placeholder="请输入收货人姓名">
-            </div>
-            <div class="mui-input-row">
-                <input type="text" name="postCode" class="mui-input-clear" placeholder="请输入邮政编码">
-            </div>
-            <div class="mui-input-row">
-                <input type="text" name="city" id="aelectCity" class="mui-input-clear" placeholder="请选择省市区" readonly>
-            </div>
-            <div class="mui-input-row">
-                <input type="text" name="detail" class="mui-input-clear" placeholder="详细地址">
-            </div>
-            <div class="mui-button-row">
-                <buttom id="addAddress" class="mui-btn mui-btn-primary">确认</buttom>
-            </div>
-        </form>
+        <div class="mui-input-group" id="from">
+        </div>
     </div>
 
     <!-- 底部 -->
@@ -74,6 +59,27 @@
     <script src="assets/mui/js/mui.poppicker.js"></script>
     <script src="js/city.js"></script>
     <script src="assets/artTemplate/template-native.js"></script>
+
+    <script type="text/template" id="edit">
+
+
+        <div class="mui-input-row">
+            <input type="text" name="username" class="mui-input-clear" placeholder="请输入收货人姓名" value='<%=recipients%>'>
+        </div>
+        <div class="mui-input-row">
+            <input type="text" name="postCode" class="mui-input-clear" placeholder="请输入邮政编码" value="<%=postCode%>">
+        </div>
+        <div class="mui-input-row">
+            <input type="text" name="city" id="aelectCity" class="mui-input-clear" placeholder="请选择省市区" readonly value="<%=address%>">
+        </div>
+        <div class="mui-input-row">
+            <input type="text" name="detail" class="mui-input-clear" placeholder="详细地址" value="<%=addressDetail%>">
+        </div>
+        <div class="mui-button-row">
+            <button id="addAddress" class="mui-btn mui-btn-primary">确认</button>
+        </div>
+
+    </script>
 
 </body>
 
