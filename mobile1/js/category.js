@@ -62,7 +62,4 @@ $(function() {
             }
         })
     })
-}) { a = caches }
-111
-
-{ a = caches }
+})

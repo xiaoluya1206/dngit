@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/mui/css/mui.min.css" />
     <link rel="stylesheet" href="assets/FontAwesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/search-result.css">
 </head>
 
 <body>
@@ -20,62 +21,45 @@
     </header>
 
     <!-- 内容 -->
-    <div class="mui-content">
-        <!-- 运动生活专区 -->
-        <div class="product">
-            <img src="images/title1.png" class="title" />
-            <ul>
-                <li>
-                    <a href="#">
-                        <img src="images/product.jpg" />
-                        <span class="name">adidas阿迪达斯 男式 场下休闲篮球鞋S83700</span>
-                        <p>
-                            <span>￥560</span>
-                            <span>￥800</span>
-                        </p>
-                        <span href="#" class="buy-now">立即购买</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="images/product.jpg" />
-                        <span class="name">adidas阿迪达斯 男式 场下休闲篮球鞋S83700</span>
-                        <p>
-                            <span>￥560</span>
-                            <span>￥800</span>
-                        </p>
-                        <span href="#" class="buy-now">立即购买</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="images/product.jpg" />
-                        <span class="name">adidas阿迪达斯 男式 场下休闲篮球鞋S83700</span>
-                        <p>
-                            <span>￥560</span>
-                            <span>￥800</span>
-                        </p>
-                        <span href="#" class="buy-now">立即购买</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="images/product.jpg" />
-                        <span class="name">adidas阿迪达斯 男式 场下休闲篮球鞋S83700</span>
-                        <p>
-                            <span>￥560</span>
-                            <span>￥800</span>
-                        </p>
-                        <span href="#" class="buy-now">立即购买</span>
-                    </a>
-                </li>
-            </ul>
+    <div id="refreshContainer">
+        <div class="mui-scroll">
+            <!-- class="mui-scroll"> mui-table-view mui-table-view-chevron-->
+            <div class="mui-table-view mui-table-view-chevron">
+                <div class="search">
+                    <input type="search" placeholder="请输入商品名称" id="search" />
+                    <button id="search-btn" class="mui-btn mui-btn-primary">搜索</button>
+                </div>
+
+                <ul class="selector">
+                    <li>
+                        <spam>上架时间</spam>
+                        <spam class="mui-icon mui-icon-arrowdown"></spam>
+                    </li>
+                    <li>
+                        <spam>价格</spam>
+                        <spam class="mui-icon mui-icon-arrowdown" id="priceSort"></spam>
+                    </li>
+                    <li>
+                        <spam>库存</spam>
+                        <spam class="mui-icon mui-icon-arrowdown" id="numSort"></spam>
+                    </li>
+                    <li>
+                        <spam>折扣</spam>
+                        <spam class="mui-icon mui-icon-arrowdown"></spam>
+                    </li>
+                </ul>
+
+                <ul class="godd-list" id="search-box">
+
+                </ul>
+            </div>
+
         </div>
     </div>
 
     <!-- 底部 -->
     <nav class="mui-bar mui-bar-tab my-footer">
-        <a class="mui-tab-item mui-active" href="index.html">
+        <a class="mui-tab-item" href="index.html">
             <span class="mui-icon mui-icon-home"></span>
             <span class="mui-tab-label">首页</span>
         </a>
@@ -95,7 +79,36 @@
 
     <script src="assets/zepto/zepto.min.js"></script>
     <script src="assets/mui/js/mui.min.js"></script>
+    <script src="assets/artTemplate/template-native.js"></script>
+    <script src="js/search-result.js"></script>
     <script src="js/base.js"></script>
+
+    <script type="text/template" id="search-list">
+
+        <% for(let i = 0;i<data.length;i++){%>
+
+            <li>
+                <a href="#">
+                    <div>
+                        <img src="<%=data[i].pic[0].picAddr%>" />
+                    </div>
+                    <p>
+                        <%=data.proName%>
+                    </p>
+                    <div>
+                        <span class="new-price">¥<%=data[i].price%></span>
+                        <span class="old-price">¥<%=data[i].oldPrice%></span>
+                    </div>
+                    <div>
+                        <span class="num">库存:<%=data[i].num%></span></span>
+                    </div>
+                    <span href="#" class="mui-btn mui-btn-primary">立即购买</span>
+                </a>
+            </li>
+
+            <% } %>
+
+    </script>
 </body>
 
 </html>

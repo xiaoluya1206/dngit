@@ -1,0 +1,121 @@
+a {
+    color: #8f8f94;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    background-color: #fff;
+}
+
+.mui-scroll {
+    padding: 0 5px 5px 5px;
+    top: 0;
+}
+
+.selector {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.mui-content {
+    background-color: #fff;
+    padding: 0 10px;
+}
+
+.search {
+    margin: 10px 0;
+    overflow: hidden;
+    display: flex;
+    border-right: none;
+}
+
+.search .mui-btn {
+    margin: 5px 0;
+    border-radius: 0;
+    border: 0;
+    background-color: #069;
+    outline: none;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.search input[type='search'] {
+    margin: 5px 0;
+    font-size: 14px;
+    border-radius: 6px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: #fff;
+    border: 1px solid #069;
+    text-align: left;
+}
+
+.godd-list {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.godd-list li {
+    width: 50%;
+    text-align: center;
+    /* 设置左边距 */
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+.godd-list li a {
+    display: block;
+    box-shadow: 0 0 5px #ccc;
+    padding: 5px;
+}
+
+.godd-list li .name {
+    display: block;
+    color: #8f8f94;
+    font-size: 14px;
+    height: 38px;
+    line-height: 19px;
+}
+
+.godd-list li p {
+    padding-top: 5px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.godd-list li div .new-price {
+    color: #f20;
+    margin-right: 5px;
+}
+
+.godd-list li .buy-now {
+    display: block;
+    width: 82px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    margin: 0 auto 5px auto;
+    background-color: #006699;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.mui-btn {
+    margin: 10px 0;
+}
+
+
+/* 原价删除线 */
+
+.godd-list li a div .old-price {
+    text-decoration: line-through;
+}
+
+.num {
+    color: #006699;
+}

@@ -26,7 +26,7 @@
         </div>
         <div class="history-top mui-clearfix">
             <span class="title mui-pull-left">搜索历史</span>
-            <span class="mui-pull-right mui-icon mui-icon-trash">清空搜索历史</span>
+            <span class="mui-pull-right mui-icon mui-icon-trash clear">清空搜索历史</span>
         </div>
         <ul class="mui-table-view" id="historyTop"></ul>
     </div>
@@ -63,8 +63,8 @@
             <li class="relative">
                 <a href="#" data-key="<%=result[i]%>">
                     <%=result[i]%>
+                        <span class="mui-icon mui-icon-closeempty mui-pull-right"></span>
                 </a>
-                <span class="mui-icon mui-icon-closeempty mui-pull-right"></span>
             </li>
             <%}%>
     </script>
