@@ -6,18 +6,41 @@ $(function() {
     */
     //  存储历史关键字
     let keyArr = []
+    let keyword = ""
     $('#search-btn').on('tap', function() {
         // 获取输入框的值 当前点击按钮的兄弟input的值
-        let keyword = $(this).siblings('input').val();
+        keyword = $(this).siblings('input').val();
+        console.log(keyword)
         if (keyword) {
             keyArr.push(keyword)
             localStorage.setItem('keyArr', JSON.stringify(keyArr))
                 /* 点击按钮跳转 获取关键字 有内容就跳转并携带关键字 */
             location.href = `search-result.html?keyword=${keyword}`
+            $('#search').val("")
         } else {
             mui.toast('请您输入商品名称')
         }
-    })
+    });
+
+
+    /* 删除单个历史记录
+                    判断自定义属性值是否与localStorage匹配 如果匹配则删除
+                    重新获取数组keyArr 重写模板引擎
+                    */
+    $('body').on('tap', '#spans', function() {
+        // removeSearch($(this).parent().attr("data-key"))
+        removeSearch($(this).prev().attr("data-key"))
+        console.log($(this).prev().attr("data-key"))
+            // console.log($(this).parent().attr("data-key"))
+    });
+    // 点击搜索历史作为提交到输入框
+    $("body").on('tap', '#historyTop li', function() {
+        $('#search').val($(this).text().trim())
+            // console.log($(this).html())
+    });
+
+
+
     if (localStorage.getItem("keyArr")) {
         // 字符串转数组
         keyArr = JSON.parse(localStorage.getItem("keyArr"))
@@ -25,15 +48,6 @@ $(function() {
         let html = template('history', { result: keyArr })
         $('#historyTop').html(html)
     }
-
-    /* 删除单个历史记录
-    判断自定义属性值是否与localStorage匹配 如果匹配则删除
-    重新获取数组keyArr 重写模板引擎
-    */
-    $('body').on('tap', '.mui-icon-closeempty', function() {
-        removeSearch($(this).parent().attr("data-key"))
-            // removeSearch($(this).siblings('a').attr("data-key"))
-    })
 
     // 清空
     $('.clear').on('tap', function() {

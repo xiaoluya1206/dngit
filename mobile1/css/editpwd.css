@@ -1,0 +1,29 @@
+body {
+    background-color: #fff;
+}
+
+[type="text"][name="code"] {
+    width: 60%;
+    float: left;
+}
+
+.mui-input-row .btn_getCode {
+    width: 35%;
+    float: left;
+    margin-left: 5%;
+    height: 40px;
+}
+
+.modify {
+    text-align: center;
+}
+
+.modify button {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.mui-content {
+    margin-top: 10px;
+    padding: 10px;
+}

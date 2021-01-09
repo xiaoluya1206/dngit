@@ -18,42 +18,37 @@
         <h1 class="mui-title">商品列表</h1>
         <!-- 搜索图标 -->
         <a class="mui-icon mui-icon-search mui-pull-right" href="search.html"></a>
+        <a class="mui-icon mui-icon-left-nav mui-pull-left" href="javascript:history.back();" style="color: #fff;"></a>
     </header>
 
     <!-- 内容 -->
-    <div id="refreshContainer">
+    <div id="refreshContainer" class="mui-content mui-scroll-wrapper">
         <div class="mui-scroll">
             <!-- class="mui-scroll"> mui-table-view mui-table-view-chevron-->
-            <div class="mui-table-view mui-table-view-chevron">
-                <div class="search">
-                    <input type="search" placeholder="请输入商品名称" id="search" />
-                    <button id="search-btn" class="mui-btn mui-btn-primary">搜索</button>
-                </div>
-
-                <ul class="selector">
-                    <li>
-                        <spam>上架时间</spam>
-                        <spam class="mui-icon mui-icon-arrowdown"></spam>
-                    </li>
-                    <li>
-                        <spam>价格</spam>
-                        <spam class="mui-icon mui-icon-arrowdown" id="priceSort"></spam>
-                    </li>
-                    <li>
-                        <spam>库存</spam>
-                        <spam class="mui-icon mui-icon-arrowdown" id="numSort"></spam>
-                    </li>
-                    <li>
-                        <spam>折扣</spam>
-                        <spam class="mui-icon mui-icon-arrowdown"></spam>
-                    </li>
-                </ul>
-
-                <ul class="godd-list" id="search-box">
-
-                </ul>
+            <div class="search">
+                <input type="search" placeholder="请输入商品名称" id="search" />
+                <button id="search-btn" class="mui-btn mui-btn-primary">搜索</button>
             </div>
 
+            <ul class="selector">
+                <li>
+                    <span>上架时间</span>
+                    <span class="mui-icon mui-icon-arrowdown"></span>
+                </li>
+                <li id="priceSort">
+                    <span>价格</span>
+                    <span class="mui-icon mui-icon-arrowdown"></span>
+                </li>
+                <li id="numSort">
+                    <span>库存</span>
+                    <span class="mui-icon mui-icon-arrowdown"></span>
+                </li>
+                <li>
+                    <span>折扣</span>
+                    <span class="mui-icon mui-icon-arrowdown"></span>
+                </li>
+            </ul>
+            <ul class="godd-list" id="search-box"></ul>
         </div>
     </div>
 
