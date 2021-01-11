@@ -21,58 +21,13 @@ $(function() {
             data = result;
             console.log(data)
             let html = template('detail', result)
-            console.log(html)
+                // console.log(html)
             $("#detailInfo").html(html)
+                // 轮播
+            let galley = mui('.mui-slider')
+            galley.slider({
+                interval: 1000
+            })
         }
     });
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// <!-- 轮播下的点 -->
-//                                 <div class="mui-slider-indicator">
-//                                     <%for(let i = 0;i<pic.length;i++){ %>
-//                                         <div class="mui-indicator <%=i==1?'mui-active':''" %>"></div>
-//                                         <%}%>
-//                                 </div>
-
-
-
-
-
-
-{
-    /* <div class="mui-slider-group mui-slider-loop">
-                    <!--支持循环，需要重复图片节点-->
-                    <%if(!pic||pic.length==0){%>
-                        pic = [{'picAddr':'/shopping/images/none.png'}]
-                        <%}%>
-                            <div class="mui-slider-item mui-slider-item-duplicate">
-                                <a href="#"><img src="<%=pic.length-1%>" /></a>
-                            </div>
-                            <%for(let i = 0;i<pic.length;i++){%>
-                                <div class="mui-slider-item">
-                                    <a href="#"><img src="<%=pic[i].picAddr%>" /></a>
-                                </div>
-                                <%}%>
-                                    <!--支持循环，需要重复图片节点-->
-                                    <div class="mui-slider-item mui-slider-item-duplicate">
-                                        <a href="#"><img src="<%=pic.length-1 %>" /></a>
-                                    </div>
-
-
-                </div> */
-}

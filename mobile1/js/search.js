@@ -12,9 +12,30 @@ $(function() {
         keyword = $(this).siblings('input').val();
         console.log(keyword)
         if (keyword) {
-            keyArr.push(keyword)
+            // keyArr.push(keyword)
+            // localStorage.setItem('keyArr', JSON.stringify(keyArr))
+            /* 点击按钮跳转 获取关键字 有内容就跳转并携带关键字 */
+            let str = localStorage.getItem('keyArr') || '[]'
+                // 转为数组
+            let keyArr = JSON.parse(str);
+            // 判断是否有重复
+            let isHave = false;
+            let haveIndex;
+            for (let i = 0; i < keyArr.length; i++) {
+                if (keyword == keyArr[i]) {
+                    isHave = true;
+                    haveIndex = i;
+                    break
+                }
+            }
+            if (isHave) {
+                keyArr.push(keyword)
+                    // 删除
+                keyArr.splice(haveIndex, 1)
+            } else {
+                keyArr.push(keyword)
+            }
             localStorage.setItem('keyArr', JSON.stringify(keyArr))
-                /* 点击按钮跳转 获取关键字 有内容就跳转并携带关键字 */
             location.href = `search-result.html?keyword=${keyword}`
             $('#search').val("")
         } else {

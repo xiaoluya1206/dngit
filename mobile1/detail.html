@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="assets/mui/css/mui.min.css" />
     <link rel="stylesheet" href="assets/FontAwesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/detail.css">
+    <link rel="stylesheet" href="css/detail.css" />
 </head>
 
 <body>
@@ -16,9 +16,8 @@
     <header id="header" class="mui-bar mui-bar-nav my-header">
         <h1 class="mui-title">商品详情页</h1>
         <!-- 返回图标 -->
-        <a class="mui-icon mui-icon-left-nav mui-pull-left" href="javascript:history.back();" style="color: #fff;"></a>
+        <a class="mui-icon mui-icon-left-nav mui-pull-left" href="javascript:history.back();" style="color: #fff"></a>
     </header>
-
 
     <div class="mui-content">
         <!-- 轮播 -->
@@ -61,38 +60,62 @@
     <script src="js/base.js"></script>
     <script src="js/detail.js"></script>
 
-
-
-
-
     <script type="text/template" id="detail">
         <div class="mui-slider">
+            <div class="mui-slider-group mui-slider-loop">
+                <!--支持循环，需要重复图片节点-->
+                <%if(!pic||pic.length==0){%>
+                    pic = [{'picAddr':'/shopping/images/none.png'}]
+                    <%}%>
+                        <div class="mui-slider-item mui-slider-item-duplicate">
+                            <a href="#"><img src="<%=pic.length-1%>" /></a>
+                        </div>
+                        <%for(let i = 0;i<pic.length;i++){%>
+                            <div class="mui-slider-item">
+                                <a href="#"><img src="<%=pic[i].picAddr%>" /></a>
+                            </div>
+                            <%}%>
+                                <!--支持循环，需要重复图片节点-->
+                                <div class="mui-slider-item mui-slider-item-duplicate">
+                                    <a href="#"><img src="<%=pic[0]%>" /></a>
+                                </div>
 
-            <!-- 介绍 -->
-            <p class="title">
-                <%=proName%>
-            </p>
-            <div class="price">价格：
-                <span class="newPrice">¥<%=price%></span>
-                <span class="oldPrice">¥<%=oldPrice%></span>
+
             </div>
-            <div class="code">尺码：
-                <%let size = size.split('-')%>
-                    <%for(let i = size[0];i<=size[1];i++){%>
-                        <span class="item"><%=i%></span>
-                        <%}%>
+            <div class="mui-slider-indicator">
+                <%for(var i = 0;i<pic.length;i++){%>
+                    <div class="mui-indicator <%=i==1?'mui-active':''%>"></div>
+                    <%}%>
             </div>
-            <div class="num">
-                数量：
-                <div>
-                    <main>
-                        <span id="minus">-</span>
-                        <input type="text" id="num" value="1">
-                        <span id="plus">+</span>
-                    </main>
-                </div>
-                <span>剩余：<%=num%></span>
+        </div>
+
+        <!-- 介绍 -->
+        <p class="title">
+            <%=proName%>
+        </p>
+        <div class="price">价格：
+            <span class="newPrice">¥<%=price%></span>
+            <span class="oldPrice">¥<%=oldPrice%></span>
+        </div>
+        <div class="code">尺码：
+            <%var size = size.split('-')%>
+                <%for(let i = size[0];i<=size[1];i++){%>
+                    <span class="item"><%=i%></span>
+                    <%}%>
+
+        </div>
+        <div class="num">
+            数量：
+            <div>
+                <main>
+                    <span id="minus">-</span>
+                    <input type="text" id="num" value="1">
+                    <span id="plus">+</span>
+                </main>
             </div>
+            <span>
+      </div>剩余：<%=num%></span>
+        </div>
         </div>
     </script>
 </body>
