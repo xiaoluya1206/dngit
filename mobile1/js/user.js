@@ -6,7 +6,7 @@ $.ajax({
     // async：异步 false为同步
     async: false,
     success: function(result) {
-        // 登陆拦截 判断如果返回的用户信息为error  并且是为登录状态便跳转到登录页面
+        // 登陆拦截 判断如果返回的用户信息为error  并且不是为登录状态便跳转到登录页面
         if (result.error || result == 400) {
             location.href = 'login.html'
         }

@@ -37,6 +37,8 @@ $(function() {
                 console.log(result)
                 if (result.success) {
                     mui.toast('登录成功');
+
+
                     setTimeout(function() {
                         // 跳转页面
                         location.href = "user.html"

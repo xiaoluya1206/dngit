@@ -18,7 +18,7 @@ $(function() {
             if (res.rows.length) {
                 //第一个a标签 添加class名
                 $("#links").find("a").eq(0).addClass("active")
-                    // 获取一级分类id
+                    // 获取一级分类第一个id
                 let id = res.rows[0].id;
                 // 根据id获取对应分类数据
                 $.ajax({
