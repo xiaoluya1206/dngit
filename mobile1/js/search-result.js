@@ -4,6 +4,7 @@ let all = "";
 let price = 1
     // 获取url关键字
 let keyword = geturl(location.href, 'keyword');
+console.log(keyword)
 
 $(function() {
     // 价格排序 获取价格按钮 添加事件 
@@ -81,6 +82,7 @@ $(function() {
 // 获取关键字函数
 function geturl(url, name) {
     let params = url.substr(url.indexOf('=') + 1)
-    return params;
+    window.params = decodeURI(params)
+    return window.params;
     // console.log(params)
 }

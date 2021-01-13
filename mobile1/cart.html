@@ -23,28 +23,16 @@
         <div id="refreshContainer">
             <div>
                 <ul class="mui-table-view" id="cart_box">
-                    <li class="mui-table-view-cell">
-                        <a href="javascript:;" class="mui-navigate-right mui-slider-handle">
-                            <input type="checkbox" class="mui-media-object mui-pull-left">
-                            <img class="mui-media-object mui-pull-left" src="images/product.jpg">
-                            <div class="mui-media-body">
-                                <p class="name">阿达看得见啊看得见啊</p>
-                                <p class="info">
-                                    <span class="price">¥92</span>
-                                    <span class="oldPrice">¥999</span>
-                                    <span class="number">×20双</span>
-                                </p>
-                                <p><span class="size">鞋码：43</span></p>
-                            </div>
-                        </a>
-                    </li>
+
                 </ul>
             </div>
         </div>
     </div>
     <div class="cart_order">
-        订单总额：¥
-        <span id="cartAmount">0.00</span>
+        <div>
+            订单总额：¥
+            <span id="cartAmount">0.00</span>
+        </div>
         <a href="javascript:;">生成订单</a>
     </div>
 
@@ -58,7 +46,7 @@
             <span class="mui-icon mui-icon-bars"></span>
             <span class="mui-tab-label">分类</span>
         </a>
-        <a class="mui-tab-item" href="cart.html">
+        <a class="mui-tab-item mui-active" href="cart.html">
             <span class="mui-icon fa fa-shopping-cart"></span>
             <span class="mui-tab-label">购物车</span>
         </a>
@@ -72,6 +60,33 @@
     <script src="assets/artTemplate/template-native.js"></script>
     <script src="js/base.js"></script>
     <script src="js/cart.js"></script>
+    <script type="text/template" id="carttp">
+        <%for(let i=0;i<result.length;i++){%>
+            <li class="mui-table-view-cell">
+
+                <div class="mui-slider-right mui-disabled">
+                    <a href="javascript:;" class="mui-btn mui-btn-blue edit-btn" data-id='<%=result[i].id%>'>编辑</a>
+                    <a href="javascript:;" class="mui-btn mui-btn-red delete-btn" data-id='<%=result[i].id%>'>删除</a>
+                </div>
+
+                <a href="javascript:;" class="mui-navigate-right mui-slider-handle">
+                    <input type="checkbox" class="mui-media-object mui-pull-left">
+                    <img class="mui-media-object mui-pull-left" src="<%=result[i].pic[0].picAddr%>">
+                    <div class="mui-media-body">
+                        <p class="name">
+                            <%=result[i].proName%>
+                        </p>
+                        <p class="info">
+                            <span class="price">¥<%=result[i].price%></span>
+                            <span class="oldPrice">¥<%=result[i].oldPrice%></span>
+                            <span class="number">×<%=result[i].num%>双</span>
+                        </p>
+                        <p><span class="size">鞋码：<%=result[i].size%></span></p>
+                    </div>
+                </a>
+            </li>
+            <%}%>
+    </script>
 </body>
 
 </html>
